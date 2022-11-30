@@ -11,5 +11,4 @@ cd ..
 
 pip install -r requirements.txt
 
-# run the script
-python3 main.py
+mkdir data
