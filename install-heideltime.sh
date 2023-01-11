@@ -1,3 +1,4 @@
+#! /bin/sh
 # first install python_heideltime
 cd python_heideltime
 
