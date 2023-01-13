@@ -21,7 +21,7 @@ After you stored all the files you like to annotate in the `data`-folder, run th
 python3 main.py
 ```
 
-The annotated files should be stored in the `data`-folder in the following format: name_of_your_file_timeparsed.xml.
+The annotated files should be stored in the `data`-folder in the following format: `name_of_your_file`_timeparsed.xml.
 
 # Submodule python_heideltime
 
