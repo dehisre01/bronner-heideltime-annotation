@@ -132,10 +132,10 @@ def refine_time(bs_soup_object):
             if re.search('(Nacht)s*', time.previous_sibling):
                 # times in time are transfered to the 24h format (instead of 12h format used by Bronner)
                 if int(time['when'][:2]) == 12:
-                    time['when'] = "00:00:00"
+                    time['when'] = "00:00:00+01:00"
                 elif int(time['when'][:2]) > 6:
                     new_time = int(time['when'][:2]) + 12
-                    time['when'] = str(new_time) + ":00:00"
+                    time['when'] = str(new_time) + ":00:00+01:00"
             if re.search('(halb|[123]/[24])', time.previous_sibling):
                 # previous specifications like half past, quater to etc. are included in the time annotation
                 match = re.search('(halb|[123]/[24])', time.previous_sibling)
@@ -143,9 +143,9 @@ def refine_time(bs_soup_object):
                 if re.search('(halb|1/2)', time.previous_sibling):
                     new_time = int(time['when'][:2]) - 1
                     if new_time < 10:
-                        time['when'] = "0" + str(new_time) + ":30:00"
+                        time['when'] = "0" + str(new_time) + ":30:00+01:00"
                     else:
-                        time['when'] = str(new_time) + ":30:00"
+                        time['when'] = str(new_time) + ":30:00+01:00"
                     if time.string == None: 
                     # if there is a selfclosing tag (<lb/>) included in the tag, the string method is not working
                         pass
@@ -155,16 +155,16 @@ def refine_time(bs_soup_object):
                 if re.search('3/4', time.previous_sibling):
                     new_time = int(time['when'][:2]) - 1
                     if new_time < 10:
-                        time['when'] = "0" + str(new_time) + ":45:00"
+                        time['when'] = "0" + str(new_time) + ":45:00+01:00"
                     else:
-                        time['when'] = str(new_time) + ":45:00"
+                        time['when'] = str(new_time) + ":45:00+01:00"
                     if time.string == None: 
                         pass
                     else:
                         time.string.replace_with(time.previous_sibling[start:]+time.string)
                         time.previous_sibling.replace_with(time.previous_sibling[:start])
                 if re.search('1/4', time.previous_sibling):
-                    time['when'] = time['when'][:3] + "15:00"
+                    time['when'] = time['when'][:3] + "15:00+01:00"
                     if time.string == None: 
                         pass
                     else:

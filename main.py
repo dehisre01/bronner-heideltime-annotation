@@ -98,8 +98,8 @@ for file in os.listdir("data"):
                         end=view.get_table_pos(int(i.attrib['end'])),
                         tag='time',
                         depth=3,
-    # instead of a pattern like "1810-02-15T05:00" only the time "05:00:00" is written as value of the "when" attribute
-                        attrib={'when': f"{i.attrib['timexValue'][-5:]}:00"}
+    # instead of a pattern like "1810-02-15T05:00" only the time "05:00:00+01:00" is written as value of the "when" attribute
+                        attrib={'when': f"{i.attrib['timexValue'][-5:]}:00+01:00"}
                         )
                     else:
                         so.add_inline(
@@ -107,7 +107,7 @@ for file in os.listdir("data"):
                         end=view.get_table_pos(int(i.attrib['end'])),
                         tag='time',
                         depth=3,
-                        attrib={'when':f"{i.attrib['timexValue']}:00"}
+                        attrib={'when':f"{i.attrib['timexValue']}:00+01:00"}
                         )
     
     
