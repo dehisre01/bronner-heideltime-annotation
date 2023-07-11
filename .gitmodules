@@ -1,0 +1,3 @@
+[submodule "python_heideltime"]
+    path = python_heideltime
+    url = https://github.com/PhilipEHausner/python_heideltime
