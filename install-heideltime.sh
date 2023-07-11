@@ -1,5 +1,10 @@
 #! /bin/sh
-# first install python_heideltime
+# install other requirements
+pip install -r requirements.txt
+
+mkdir data
+
+# install python_heideltime
 cd python_heideltime
 
 chmod +x install_heideltime_standalone.sh
@@ -7,9 +12,3 @@ chmod +x install_heideltime_standalone.sh
 
 python3 -m pip install .
 
-# install other requirements
-cd ..
-
-pip install -r requirements.txt
-
-mkdir data
