@@ -3,3 +3,6 @@
 *.log
 *.xml
 *.txt
+config.props
+*.lock
+Pipfile
