@@ -11,7 +11,7 @@ Install the requirements by run the following command in your terminal:
 pip install requirements.txt
 ```
 
-Create a folder called `data` on the toplevel and place all the XML files you'd like to annotate there. Start the `main.py` script by typing the following command in your console:
+Create a folder called `data` at the toplevel and place all the XML files you'd like to annotate there. Start the `main.py` script by typing the following command in your console:
 
 ```python
 python3 main.py
